@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shanaya ❤️ | Neon Fan Page</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#020207;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* =========================
+   NEON BACKGROUND
+========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-10;
+
+    background:
+    radial-gradient(
+        circle at 10% 20%,
+        rgba(255,0,110,.22),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 90% 25%,
+        rgba(0,180,255,.18),
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 50% 90%,
+        rgba(150,0,255,.20),
+        transparent 35%
+    ),
+    #020207;
+}
+
+
+/* =========================
+   MOVING NEON GLOWS
+========================= */
+
+.glow{
+    position:fixed;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:.30;
+
+    z-index:-5;
+
+    animation:
+    glowMove 10s infinite alternate ease-in-out;
+}
+
+.glow.one{
+    background:#ff0080;
+    left:-120px;
+    top:10%;
+}
+
+.glow.two{
+    background:#00eaff;
+    right:-120px;
+    top:40%;
+
+    animation-delay:2s;
+}
+
+.glow.three{
+    background:#9d00ff;
+    left:30%;
+    bottom:-150px;
+
+    animation-delay:4s;
+}
+
+@keyframes glowMove{
+
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+
+    50%{
+        transform:translate(100px,70px) scale(1.15);
+    }
+
+    100%{
+        transform:translate(-50px,-60px) scale(.9);
+    }
+}
+
+
+/* =========================
+   NEON GRID
+========================= */
+
+body::after{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    z-index:-8;
+
+    background-image:
+    linear-gradient(
+        rgba(0,255,255,.035) 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        rgba(255,0,150,.035) 1px,
+        transparent 1px
+    );
+
+    background-size:
+    45px 45px;
+
+    pointer-events:none;
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+
+    position:fixed;
+    inset:0;
+
+    z-index:99999;
+
+    background:#020207;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-direction:column;
+
+    transition:1s ease;
+}
+
+.loader-icon{
+
+    font-size:70px;
+
+    animation:
+    heartPulse 1s infinite;
+
+    filter:
+    drop-shadow(0 0 10px #ff0080)
+    drop-shadow(0 0 30px #ff0080);
+}
+
+.loader-text{
+
+    margin-top:20px;
+
+    color:#ff4da6;
+
+    letter-spacing:5px;
+
+    font-size:10px;
+
+    text-shadow:
+    0 0 5px #ff0080,
+    0 0 15px #ff0080;
+}
+
+@keyframes heartPulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.heart{
+
+    position:fixed;
+
+    bottom:-50px;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:
+    floatHeart linear forwards;
+
+    filter:
+    drop-shadow(0 0 8px #ff0080);
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:
+        translateY(0)
+        rotate(0);
+
+        opacity:0;
+    }
+
+    15%{
+        opacity:.9;
+    }
+
+    100%{
+        transform:
+        translateY(-115vh)
+        rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:5000;
+
+    padding:16px 22px;
+
+    background:
+    rgba(2,2,7,.72);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,0,150,.35);
+
+    box-shadow:
+    0 0 15px rgba(255,0,120,.15),
+    0 0 40px rgba(0,200,255,.08);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+
+    font-size:20px;
+
+    font-weight:900;
+
+    color:white;
+
+    text-shadow:
+    0 0 5px white,
+    0 0 15px #ff0080,
+    0 0 30px #ff0080;
+}
+
+.logo span{
+
+    color:#ff0080;
+
+    text-shadow:
+    0 0 5px #ff0080,
+    0 0 20px #ff0080;
+}
+
+.nav-btn{
+
+    padding:9px 17px;
+
+    border-radius:30px;
+
+    border:
+    1px solid #00eaff;
+
+    background:
+    rgba(0,234,255,.06);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    box-shadow:
+    inset 0 0 10px rgba(0,234,255,.12),
+    0 0 10px rgba(0,234,255,.4);
+
+    transition:.3s;
+}
+
+.nav-btn:hover{
+
+    box-shadow:
+    0 0 10px #00eaff,
+    0 0 25px #00eaff;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    padding:110px 20px 60px;
+
+    position:relative;
+}
+
+.hero-content{
+
+    max-width:850px;
+
+    animation:
+    heroIn 1.7s ease;
+}
+
+@keyframes heroIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(60px)
+        scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+
+/* =========================
+   NEON BADGE
+========================= */
+
+.badge{
+
+    display:inline-block;
+
+    padding:9px 17px;
+
+    border-radius:30px;
+
+    border:
+    1px solid #ff0080;
+
+    color:#ff6bb5;
+
+    background:
+    rgba(255,0,128,.06);
+
+    box-shadow:
+    0 0 8px rgba(255,0,128,.6),
+    inset 0 0 10px rgba(255,0,128,.08);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    margin-bottom:25px;
+
+    animation:
+    neonFlicker 3s infinite;
+}
+
+
+/* =========================
+   NEON TITLE
+========================= */
+
+.hero h1{
+
+    font-size:
+    clamp(65px,16vw,150px);
+
+    line-height:.9;
+
+    font-weight:900;
+
+    color:#fff;
+
+    text-shadow:
+
+    0 0 5px #fff,
+
+    0 0 10px #ff0080,
+
+    0 0 20px #ff0080,
+
+    0 0 40px #ff0080,
+
+    0 0 80px #ff0080;
+
+    animation:
+    titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow{
+
+    0%{
+        text-shadow:
+        0 0 5px #fff,
+        0 0 15px #ff0080,
+        0 0 30px #ff0080;
+    }
+
+    100%{
+        text-shadow:
+        0 0 5px #fff,
+        0 0 15px #00eaff,
+        0 0 30px #00eaff,
+        0 0 60px #00eaff;
+    }
+}
+
+.hero h2{
+
+    margin-top:25px;
+
+    font-size:
+    clamp(22px,5vw,35px);
+
+    font-weight:400;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 8px #ff0080,
+    0 0 20px #ff0080;
+}
+
+.hero p{
+
+    max-width:620px;
+
+    margin:20px auto;
+
+    color:#aaa;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+
+    padding:14px 25px;
+
+    border-radius:40px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.primary-btn{
+
+    border:
+    1px solid #ff0080;
+
+    background:
+    rgba(255,0,128,.08);
+
+    box-shadow:
+    0 0 10px #ff0080,
+    inset 0 0 10px rgba(255,0,128,.1);
+}
+
+.secondary-btn{
+
+    border:
+    1px solid #00eaff;
+
+    background:
+    rgba(0,234,255,.06);
+
+    box-shadow:
+    0 0 10px #00eaff,
+    inset 0 0 10px rgba(0,234,255,.1);
+}
+
+.primary-btn:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.04);
+
+    box-shadow:
+    0 0 10px #ff0080,
+    0 0 25px #ff0080,
+    0 0 50px rgba(255,0,128,.4);
+}
+
+.secondary-btn:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.04);
+
+    box-shadow:
+    0 0 10px #00eaff,
+    0 0 25px #00eaff,
+    0 0 50px rgba(0,234,255,.4);
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:
+    100px 20px;
+}
+
+.section-head{
+
+    text-align:center;
+
+    margin-bottom:45px;
+}
+
+.section-head small{
+
+    color:#00eaff;
+
+    letter-spacing:4px;
+
+    font-size:10px;
+
+    text-shadow:
+    0 0 8px #00eaff,
+    0 0 20px #00eaff;
+}
+
+.section-head h2{
+
+    margin-top:15px;
+
+    font-size:
+    clamp(35px,7vw,60px);
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.15);
+}
+
+.section-head span{
+
+    color:#ff3d9b;
+
+    text-shadow:
+    0 0 8px #ff0080,
+    0 0 20px #ff0080,
+    0 0 40px #ff0080;
+}
+
+
+/* =========================
+   NEON BORDER CARD
+========================= */
+
+.neon-card{
+
+    position:relative;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+    rgba(5,5,15,.75);
+
+    border:
+    1px solid transparent;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 0 15px rgba(255,0,128,.2),
+    inset 0 0 25px rgba(0,234,255,.04);
+}
+
+
+/* RUNNING BORDER */
+
+.neon-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:32px;
+
+    background:
+    conic-gradient(
+        from 0deg,
+        #ff0080,
+        #00eaff,
+        #8a2be2,
+        #ff0080
+    );
+
+    animation:
+    borderRotate 4s linear infinite;
+
+    z-index:-2;
+}
+
+.neon-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:2px;
+
+    border-radius:28px;
+
+    background:#05050d;
+
+    z-index:-1;
+}
+
+@keyframes borderRotate{
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+
+/* =========================
+   CREATOR
+========================= */
+
+.creator{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+}
+
+.creator-icon{
+
+    min-width:95px;
+
+    height:95px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:42px;
+
+    border:
+    2px solid #ff0080;
+
+    background:
+    rgba(255,0,128,.08);
+
+    box-shadow:
+    0 0 10px #ff0080,
+    0 0 30px #ff0080,
+    inset 0 0 20px rgba(255,0,128,.15);
+
+    animation:
+    iconGlow 2s infinite alternate;
+}
+
+@keyframes iconGlow{
+
+    from{
+        box-shadow:
+        0 0 8px #ff0080,
+        0 0 20px #ff0080;
+    }
+
+    to{
+        box-shadow:
+        0 0 8px #00eaff,
+        0 0 30px #00eaff;
+    }
+}
+
+.creator h3{
+
+    font-size:28px;
+
+    margin-bottom:10px;
+
+    text-shadow:
+    0 0 10px #ff0080;
+}
+
+.creator p{
+
+    color:#aaa;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   LIVE CARD
+========================= */
+
+.live-card{
+
+    position:relative;
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    background:
+    rgba(5,5,12,.8);
+
+    border:
+    1px solid #ff315f;
+
+    box-shadow:
+    0 0 10px #ff315f,
+    0 0 30px rgba(255,49,95,.25),
+    inset 0 0 25px rgba(255,49,95,.05);
+}
+
+.live-top{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:20px;
+}
+
+.live-dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ff174f;
+
+    box-shadow:
+    0 0 5px #ff174f,
+    0 0 15px #ff174f,
+    0 0 30px #ff174f;
+
+    animation:
+    livePulse 1s infinite;
+}
+
+@keyframes livePulse{
+
+    50%{
+        transform:scale(1.4);
+
+        opacity:.5;
+    }
+}
+
+.live-title{
+
+    color:#ff527c;
+
+    text-shadow:
+    0 0 10px #ff174f;
+
+    font-weight:bold;
+}
+
+.live-card h3{
+
+    font-size:
+    clamp(25px,5vw,40px);
+
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.3);
+}
+
+.live-card p{
+
+    color:#aaa;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   SHAYARI
+========================= */
+
+.shayari{
+
+    max-width:750px;
+
+    margin:auto;
+
+    padding:50px 25px;
+
+    text-align:center;
+
+    position:relative;
+
+    border-radius:30px;
+
+    background:#05050d;
+
+    border:
+    1px solid #9d00ff;
+
+    box-shadow:
+    0 0 10px #9d00ff,
+    0 0 35px rgba(157,0,255,.25),
+    inset 0 0 25px rgba(157,0,255,.07);
+}
+
+.shayari-icon{
+
+    font-size:55px;
+
+    filter:
+    drop-shadow(0 0 10px #ff0080)
+    drop-shadow(0 0 25px #ff0080);
+
+    animation:
+    heartPulse 1.5s infinite;
+}
+
+.shayari p{
+
+    margin-top:25px;
+
+    font-family:Georgia,serif;
+
+    font-size:
+    clamp(21px,5vw,31px);
+
+    line-height:1.8;
+
+    color:#eee;
+
+    text-shadow:
+    0 0 8px rgba(255,255,255,.15);
+}
+
+
+/* =========================
+   IMAGE GALLERY
+========================= */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.photo{
+
+    height:330px;
+
+    position:relative;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:
+    1px solid #00eaff;
+
+    background:#05050d;
+
+    box-shadow:
+    0 0 8px #00eaff,
+    0 0 25px rgba(0,234,255,.18);
+
+    transition:.4s;
+}
+
+.photo::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:3px;
+
+    top:0;
+    left:-100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #00eaff,
+        transparent
+    );
+
+    box-shadow:
+    0 0 10px #00eaff;
+
+    animation:
+    scanLine 3s linear infinite;
+
+    z-index:3;
+}
+
+@keyframes scanLine{
+
+    100%{
+        left:100%;
+    }
+}
+
+.photo:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.02);
+
+    border-color:#ff0080;
+
+    box-shadow:
+    0 0 10px #ff0080,
+    0 0 35px #ff0080;
+}
+
+.photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.photo:hover img{
+
+    transform:scale(1.08);
+}
+
+
+/* =========================
+   VIDEO
+========================= */
+
+.video-box{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:7px;
+
+    border-radius:30px;
+
+    position:relative;
+
+    background:
+    conic-gradient(
+        #ff0080,
+        #00eaff,
+        #9d00ff,
+        #ff0080
+    );
+
+    animation:
+    borderRotate 5s linear infinite;
+}
+
+.video-inner{
+
+    padding:5px;
+
+    border-radius:25px;
+
+    background:#03030a;
+}
+
+.video-inner video{
+
+    display:block;
+
+    width:100%;
+
+    max-height:600px;
+
+    border-radius:20px;
+
+    background:#000;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message-area{
+
+    text-align:center;
+}
+
+.hidden-message{
+
+    max-width:750px;
+
+    margin:30px auto 0;
+
+    padding:40px 25px;
+
+    border-radius:30px;
+
+    background:#05050d;
+
+    border:
+    1px solid #ff0080;
+
+    box-shadow:
+    0 0 10px #ff0080,
+    0 0 35px rgba(255,0,128,.25),
+    inset 0 0 20px rgba(255,0,128,.06);
+
+    display:none;
+
+    animation:
+    reveal .8s ease;
+}
+
+@keyframes reveal{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(30px)
+        scale(.95);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
+    }
+}
+
+.hidden-message h3{
+
+    font-size:30px;
+
+    color:#ff6ba8;
+
+    text-shadow:
+    0 0 10px #ff0080,
+    0 0 25px #ff0080;
+
+    margin-bottom:20px;
+}
+
+.hidden-message p{
+
+    color:#ccc;
+
+    line-height:1.9;
+}
+
+
+/* =========================
+   MUSIC BUTTON
+========================= */
+
+.music-btn{
+
+    position:fixed;
+
+    right:18px;
+
+    bottom:18px;
+
+    z-index:9000;
+
+    padding:13px 18px;
+
+    border-radius:40px;
+
+    border:
+    1px solid #00eaff;
+
+    background:
+    rgba(2,2,10,.85);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 8px #00eaff,
+    0 0 20px rgba(0,234,255,.35);
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+}
+
+.music-btn:hover{
+
+    box-shadow:
+    0 0 10px #00eaff,
+    0 0 30px #00eaff;
+
+    transform:scale(1.05);
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    text-align:center;
+
+    padding:
+    120px 20px;
+}
+
+.final-heart{
+
+    font-size:70px;
+
+    filter:
+    drop-shadow(0 0 8px #ff0080)
+    drop-shadow(0 0 25px #ff0080);
+
+    animation:
+    heartPulse 1.5s infinite;
+}
+
+.final h2{
+
+    margin-top:25px;
+
+    font-size:
+    clamp(35px,7vw,60px);
+
+    color:#fff;
+
+    text-shadow:
+    0 0 8px #ff0080,
+    0 0 20px #ff0080,
+    0 0 40px #ff0080;
+}
+
+.final p{
+
+    margin:20px auto;
+
+    max-width:600px;
+
+    color:#999;
+
+    line-height:1.8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    border-top:
+    1px solid rgba(0,234,255,.3);
+
+    color:#666;
+
+    font-size:12px;
+
+    line-height:2;
+
+    box-shadow:
+    0 -5px 25px rgba(0,234,255,.08);
+}
+
+footer strong{
+
+    color:#ff5ca5;
+
+    text-shadow:
+    0 0 8px #ff0080,
+    0 0 20px #ff0080;
+}
+
+
+/* =========================
+   FLICKER
+========================= */
+
+@keyframes neonFlicker{
+
+    0%,18%,22%,63%,64%,100%{
+        opacity:1;
+    }
+
+    20%,62%{
+        opacity:.55;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:650px){
+
+    .navbar{
+        padding:14px;
+    }
+
+    .logo{
+        font-size:17px;
+    }
+
+    .hero{
+        padding-top:120px;
+    }
+
+    .hero h1{
+        font-size:70px;
+    }
+
+    section{
+        padding:
+        75px 15px;
+    }
+
+    .creator{
+        flex-direction:column;
+
+        text-align:center;
+
+        padding:30px 20px;
+    }
+
+    .live-card{
+        padding:25px 20px;
+    }
+
+    .photo{
+        height:300px;
+    }
+
+    .video-box{
+        padding:5px;
+    }
+
+    .music-btn{
+        right:12px;
+        bottom:12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NEON GLOWS -->
+
+<div class="glow one"></div>
+<div class="glow two"></div
