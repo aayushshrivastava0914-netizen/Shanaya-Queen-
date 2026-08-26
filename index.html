@@ -7,6 +7,7 @@
 <title>Shanaya ❤️ | A Little Fan Page</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -24,7 +25,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND */
+/* ================= BACKGROUND ================= */
 
 body::before{
     content:"";
@@ -75,6 +76,7 @@ body::before{
 }
 
 @keyframes glowMove{
+
     from{
         transform:translate(0,0);
     }
@@ -82,19 +84,22 @@ body::before{
     to{
         transform:translate(100px,80px);
     }
+
 }
 
-/* LOADER */
+/* ================= LOADER ================= */
 
 .loader{
     position:fixed;
     inset:0;
     z-index:9999;
     background:#050507;
+
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
+
     transition:1s ease;
 }
 
@@ -109,9 +114,11 @@ body::before{
     letter-spacing:5px;
     color:#ff7da5;
     text-align:center;
+    padding:0 20px;
 }
 
 @keyframes pulse{
+
     0%,100%{
         transform:scale(1);
     }
@@ -119,14 +126,16 @@ body::before{
     50%{
         transform:scale(1.2);
     }
+
 }
 
-/* MUSIC */
+/* ================= MUSIC ================= */
 
 .music-btn{
     position:fixed;
     right:18px;
     bottom:18px;
+
     z-index:9998;
 
     padding:12px 18px;
@@ -151,19 +160,26 @@ body::before{
     transform:scale(1.05);
 }
 
-/* FLOATING HEARTS */
+/* ================= FLOATING HEARTS ================= */
 
 .heart{
     position:fixed;
     bottom:-40px;
+
     pointer-events:none;
+
     z-index:-1;
+
     animation:floatHeart linear forwards;
 }
 
 @keyframes floatHeart{
+
     0%{
-        transform:translateY(0) rotate(0deg);
+        transform:
+        translateY(0)
+        rotate(0deg);
+
         opacity:0;
     }
 
@@ -172,15 +188,20 @@ body::before{
     }
 
     100%{
-        transform:translateY(-115vh) rotate(360deg);
+        transform:
+        translateY(-115vh)
+        rotate(360deg);
+
         opacity:0;
     }
+
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 .navbar{
     position:fixed;
+
     top:0;
     left:0;
     right:0;
@@ -197,7 +218,9 @@ body::before{
     1px solid rgba(255,255,255,.06);
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
@@ -230,12 +253,13 @@ body::before{
     background:rgba(255,70,130,.15);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
     min-height:100vh;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -246,19 +270,26 @@ body::before{
 
 .hero-content{
     max-width:850px;
+
     animation:heroIn 1.8s ease;
 }
 
 @keyframes heroIn{
+
     from{
         opacity:0;
-        transform:translateY(60px) scale(.96);
+        transform:
+        translateY(60px)
+        scale(.96);
     }
 
     to{
         opacity:1;
-        transform:translateY(0) scale(1);
+        transform:
+        translateY(0)
+        scale(1);
     }
+
 }
 
 .badge{
@@ -270,7 +301,8 @@ body::before{
 
     background:rgba(255,80,140,.10);
 
-    border:1px solid rgba(255,100,160,.18);
+    border:
+    1px solid rgba(255,100,160,.18);
 
     color:#ff86ac;
 
@@ -282,7 +314,9 @@ body::before{
 }
 
 .hero h1{
-    font-size:clamp(65px,16vw,145px);
+
+    font-size:
+    clamp(65px,16vw,145px);
 
     line-height:.9;
 
@@ -300,12 +334,15 @@ body::before{
     background-size:300%;
 
     -webkit-background-clip:text;
+
     -webkit-text-fill-color:transparent;
 
-    animation:gradientText 5s infinite;
+    animation:
+    gradientText 5s infinite;
 }
 
 @keyframes gradientText{
+
     0%{
         background-position:0%;
     }
@@ -317,12 +354,15 @@ body::before{
     100%{
         background-position:0%;
     }
+
 }
 
 .hero h2{
+
     margin-top:25px;
 
-    font-size:clamp(22px,5vw,35px);
+    font-size:
+    clamp(22px,5vw,35px);
 
     font-weight:400;
 
@@ -330,6 +370,7 @@ body::before{
 }
 
 .hero p{
+
     max-width:600px;
 
     margin:20px auto;
@@ -340,14 +381,20 @@ body::before{
 }
 
 .hero-buttons{
+
     display:flex;
+
     justify-content:center;
+
     gap:12px;
+
     flex-wrap:wrap;
+
     margin-top:30px;
 }
 
 .primary-btn{
+
     padding:14px 25px;
 
     border:0;
@@ -368,24 +415,31 @@ body::before{
     font-weight:600;
 
     box-shadow:
-    0 0 30px rgba(255,50,130,.25);
+    0 0 30px
+    rgba(255,50,130,.25);
 
     transition:.3s;
 }
 
 .primary-btn:hover{
-    transform:translateY(-3px) scale(1.03);
+
+    transform:
+    translateY(-3px)
+    scale(1.03);
 }
 
 .secondary-btn{
+
     padding:14px 25px;
 
     border-radius:40px;
 
     border:
-    1px solid rgba(255,255,255,.15);
+    1px solid
+    rgba(255,255,255,.15);
 
-    background:rgba(255,255,255,.04);
+    background:
+    rgba(255,255,255,.04);
 
     color:white;
 
@@ -395,93 +449,131 @@ body::before{
 }
 
 .secondary-btn:hover{
-    background:rgba(255,255,255,.08);
+
+    background:
+    rgba(255,255,255,.08);
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 section{
+
     max-width:1100px;
+
     margin:auto;
+
     padding:90px 20px;
 }
 
 .section-head{
+
     text-align:center;
+
     margin-bottom:45px;
 }
 
 .section-head small{
+
     color:#ff6e9d;
+
     letter-spacing:4px;
+
     font-size:10px;
 }
 
 .section-head h2{
+
     margin-top:12px;
-    font-size:clamp(35px,7vw,60px);
+
+    font-size:
+    clamp(35px,7vw,60px);
 }
 
 .section-head span{
+
     color:#ff6498;
 }
 
-/* CREATOR */
+/* ================= CREATOR ================= */
 
 .creator{
+
     max-width:850px;
+
     margin:auto;
 
     padding:35px;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.04);
+    background:
+    rgba(255,255,255,.04);
 
-    border:1px solid rgba(255,255,255,.09);
+    border:
+    1px solid
+    rgba(255,255,255,.09);
 
     backdrop-filter:blur(20px);
 
     display:flex;
+
     align-items:center;
+
     gap:30px;
 }
 
 .creator-photo{
+
     min-width:120px;
+
     width:120px;
+
     height:120px;
 
     border-radius:50%;
 
     overflow:hidden;
 
-    border:3px solid rgba(255,100,160,.5);
+    border:
+    3px solid
+    rgba(255,100,160,.5);
 
     box-shadow:
-    0 0 35px rgba(255,50,130,.3);
+    0 0 35px
+    rgba(255,50,130,.3);
 }
 
 .creator-photo img{
+
     width:100%;
+
     height:100%;
+
     object-fit:cover;
+
+    display:block;
 }
 
 .creator h3{
+
     font-size:27px;
+
     margin-bottom:8px;
 }
 
 .creator p{
+
     color:#aaa;
+
     line-height:1.7;
 }
 
-/* VIDEO */
+/* ================= VIDEO ================= */
 
 .video-card{
+
     max-width:850px;
+
     margin:auto;
 
     padding:8px;
@@ -496,28 +588,40 @@ section{
     );
 
     box-shadow:
-    0 0 60px rgba(255,50,130,.18);
+    0 0 60px
+    rgba(255,50,130,.18);
 }
 
 .video-card video{
+
     width:100%;
+
     display:block;
+
     border-radius:21px;
+
     background:#000;
+
+    max-height:700px;
 }
 
-/* PHOTOS */
+/* ================= PHOTOS ================= */
 
 .gallery{
+
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    repeat(
+        auto-fit,
+        minmax(220px,1fr)
+    );
 
     gap:25px;
 }
 
 .photo{
+
     height:380px;
 
     border-radius:25px;
@@ -527,19 +631,23 @@ section{
     background:#111;
 
     box-shadow:
-    0 20px 50px rgba(0,0,0,.5);
+    0 20px 50px
+    rgba(0,0,0,.5);
 
     transition:.5s;
 }
 
 .photo:hover{
+
     transform:
     translateY(-10px)
     scale(1.02);
 }
 
 .photo img{
+
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -550,13 +658,16 @@ section{
 }
 
 .photo:hover img{
+
     transform:scale(1.08);
 }
 
-/* LIVE */
+/* ================= LIVE ================= */
 
 .live-card{
+
     max-width:850px;
+
     margin:auto;
 
     padding:30px;
@@ -570,19 +681,26 @@ section{
         rgba(120,60,255,.08)
     );
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+    1px solid
+    rgba(255,255,255,.1);
 }
 
 .live-top{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
 
     margin-bottom:20px;
 }
 
 .live-dot{
+
     width:10px;
+
     height:10px;
 
     border-radius:50%;
@@ -594,25 +712,35 @@ section{
 }
 
 .live-title{
+
     color:#ff6d95;
+
     font-weight:bold;
+
     font-size:13px;
 }
 
 .live-card h3{
-    font-size:clamp(25px,5vw,40px);
+
+    font-size:
+    clamp(25px,5vw,40px);
+
     margin-bottom:15px;
 }
 
 .live-card p{
+
     color:#aaa;
+
     line-height:1.8;
 }
 
-/* SHAYARI */
+/* ================= SHAYARI ================= */
 
 .shayari{
+
     max-width:750px;
+
     margin:auto;
 
     text-align:center;
@@ -621,38 +749,49 @@ section{
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.035);
+    background:
+    rgba(255,255,255,.035);
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+    1px solid
+    rgba(255,255,255,.1);
 
     box-shadow:
-    0 25px 80px rgba(0,0,0,.35);
+    0 25px 80px
+    rgba(0,0,0,.35);
 }
 
 .shayari-icon{
+
     font-size:55px;
-    animation:pulse 1.5s infinite;
+
+    animation:
+    pulse 1.5s infinite;
 }
 
 .shayari p{
+
     margin-top:25px;
 
     font-family:Georgia,serif;
 
-    font-size:clamp(21px,5vw,31px);
+    font-size:
+    clamp(21px,5vw,31px);
 
     line-height:1.8;
 
     color:#eee;
 }
 
-/* MESSAGE */
+/* ================= MESSAGE ================= */
 
 .message-area{
+
     text-align:center;
 }
 
 .hidden-message{
+
     max-width:750px;
 
     margin:30px auto 0;
@@ -661,70 +800,102 @@ section{
 
     border-radius:25px;
 
-    background:rgba(255,255,255,.04);
+    background:
+    rgba(255,255,255,.04);
 
-    border:1px solid rgba(255,255,255,.1);
+    border:
+    1px solid
+    rgba(255,255,255,.1);
 
     display:none;
 
-    animation:reveal .8s ease;
+    animation:
+    reveal .8s ease;
 }
 
 @keyframes reveal{
+
     from{
+
         opacity:0;
-        transform:translateY(30px) scale(.96);
+
+        transform:
+        translateY(30px)
+        scale(.96);
     }
 
     to{
+
         opacity:1;
-        transform:translateY(0) scale(1);
+
+        transform:
+        translateY(0)
+        scale(1);
     }
+
 }
 
 .hidden-message h3{
+
     font-size:30px;
+
     margin-bottom:20px;
 }
 
 .hidden-message p{
+
     color:#ccc;
+
     line-height:1.9;
 }
 
-/* FINAL */
+/* ================= FINAL ================= */
 
 .final{
+
     text-align:center;
+
     padding:100px 20px;
 }
 
 .final-heart{
+
     font-size:65px;
-    animation:pulse 1.5s infinite;
+
+    animation:
+    pulse 1.5s infinite;
 }
 
 .final h2{
+
     margin-top:25px;
-    font-size:clamp(35px,7vw,60px);
+
+    font-size:
+    clamp(35px,7vw,60px);
 }
 
 .final p{
+
     margin:20px auto;
+
     max-width:600px;
+
     color:#999;
+
     line-height:1.8;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
+
     text-align:center;
 
     padding:50px 20px;
 
     border-top:
-    1px solid rgba(255,255,255,.06);
+    1px solid
+    rgba(255,255,255,.06);
 
     color:#666;
 
@@ -734,47 +905,71 @@ footer{
 }
 
 footer strong{
+
     color:#ff6b99;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:650px){
 
     .navbar{
+
         padding:15px;
     }
 
     .hero{
+
         padding-top:120px;
     }
 
     .creator{
+
         flex-direction:column;
+
         text-align:center;
+
         padding:30px 20px;
     }
 
     section{
+
         padding:70px 15px;
     }
 
     .live-card{
+
         padding:25px 20px;
     }
 
     .photo{
+
         height:330px;
     }
+
+    .music-btn{
+
+        right:12px;
+
+        bottom:12px;
+
+        padding:10px 15px;
+
+        font-size:13px;
+    }
+
 }
+
 </style>
 </head>
+
 
 <body>
 
 <!-- BACKGROUND GLOW -->
 
 <div class="glow one"></div>
+
 <div class="glow two"></div>
 
 
@@ -793,15 +988,19 @@ footer strong{
 </div>
 
 
-<!-- BACKGROUND MUSIC -->
+<!-- ================= MUSIC ================= -->
 
-<audio id="bgMusic" loop preload="auto">
+<audio
+    id="bgMusic"
+    loop
+    preload="auto">
 
     <source
-        src="/static/music/background.mp3"
+        src="/static/Dope%20Shope%20-%20Yo%20Yo%20Honey%20Singh.mp3"
         type="audio/mpeg">
 
 </audio>
+
 
 <button
     class="music-btn"
@@ -813,13 +1012,17 @@ footer strong{
 </button>
 
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav class="navbar">
 
     <div class="logo">
-        Shanaya <span>❤️</span>
+
+        Shanaya
+        <span>❤️</span>
+
     </div>
+
 
     <button
         class="nav-btn"
@@ -832,32 +1035,45 @@ footer strong{
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <header class="hero">
 
     <div class="hero-content">
 
         <div class="badge">
+
             A LITTLE FAN PAGE ✨
+
         </div>
 
+
         <h1>
+
             Shanaya
+
         </h1>
 
+
         <h2>
+
             Only For You 🥺❤️
+
         </h2>
 
+
         <p>
+
             A tiny corner of the internet
             made specially to appreciate
             Shanaya, her streams and
             the positive energy she shares.
+
         </p>
 
+
         <div class="hero-buttons">
+
 
             <button
                 class="primary-btn"
@@ -867,6 +1083,7 @@ footer strong{
 
             </button>
 
+
             <button
                 class="secondary-btn"
                 onclick="showMessage()">
@@ -875,6 +1092,7 @@ footer strong{
 
             </button>
 
+
         </div>
 
     </div>
@@ -882,18 +1100,25 @@ footer strong{
 </header>
 
 
-<!-- CREATOR -->
+<!-- ================= CREATOR ================= -->
 
 <section id="creator">
 
     <div class="section-head">
 
         <small>
+
             THE CREATOR
+
         </small>
 
+
         <h2>
-            Meet <span>Shanaya</span> ✨
+
+            Meet
+            <span>Shanaya</span>
+            ✨
+
         </h2>
 
     </div>
@@ -901,23 +1126,28 @@ footer strong{
 
     <div class="creator">
 
-        <div class="creator-photo">
 
-            <!-- FIXED IMAGE PATH -->
+        <div class="creator-photo">
 
             <img
                 src="/static/grok_1787699814913.jpg"
-                alt="Shanaya">
+                alt="Shanaya"
+                loading="lazy">
 
         </div>
+
 
         <div>
 
             <h3>
+
                 Shanaya ❤️
+
             </h3>
 
+
             <p>
+
                 YouTuber • Live Streamer • Creator
 
                 <br><br>
@@ -926,6 +1156,7 @@ footer strong{
                 personality and content
                 can make an ordinary moment
                 a little more enjoyable. ✨
+
             </p>
 
         </div>
@@ -935,18 +1166,25 @@ footer strong{
 </section>
 
 
-<!-- VIDEO -->
+<!-- ================= VIDEO ================= -->
 
 <section>
 
     <div class="section-head">
 
         <small>
+
             A LITTLE MOMENT
+
         </small>
 
+
         <h2>
-            Just <span>For You</span> 🎥
+
+            Just
+            <span>For You</span>
+            🎥
+
         </h2>
 
     </div>
@@ -960,7 +1198,7 @@ footer strong{
             preload="metadata">
 
             <source
-                src="/static/videos/video.mp4"
+                src="/static/ayu.mp4"
                 type="video/mp4">
 
             Your browser does not support video.
@@ -972,18 +1210,25 @@ footer strong{
 </section>
 
 
-<!-- PHOTOS -->
+<!-- ================= PHOTOS ================= -->
 
 <section>
 
     <div class="section-head">
 
         <small>
+
             BEAUTIFUL MOMENTS
+
         </small>
 
+
         <h2>
-            Shanaya <span>Gallery</span> 📸
+
+            Shanaya
+            <span>Gallery</span>
+            📸
+
         </h2>
 
     </div>
@@ -991,45 +1236,53 @@ footer strong{
 
     <div class="gallery">
 
-        <div class="photo">
 
-            <!-- FIXED IMAGE 1 -->
+        <div class="photo">
 
             <img
                 src="/static/grok_1787699814913.jpg"
-                alt="Shanaya photo 1">
+                alt="Shanaya photo 1"
+                loading="lazy">
 
         </div>
 
 
         <div class="photo">
 
-            <!-- FIXED IMAGE 2 -->
-
             <img
                 src="/static/grok_1787699802753.jpg"
-                alt="Shanaya photo 2">
+                alt="Shanaya photo 2"
+                loading="lazy">
 
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- LIVE SECTION -->
+<!-- ================= LIVE ================= -->
 
 <section>
 
     <div class="section-head">
 
         <small>
+
             LIVE STREAMS
+
         </small>
 
+
         <h2>
+
             When Shanaya Goes
-            <span>LIVE</span> 🔴
+
+            <span>LIVE</span>
+
+            🔴
+
         </h2>
 
     </div>
@@ -1037,19 +1290,27 @@ footer strong{
 
     <div class="live-card">
 
+
         <div class="live-top">
 
             <div class="live-dot"></div>
 
+
             <div class="live-title">
+
                 LIVE ENERGY
+
             </div>
 
         </div>
 
+
         <h3>
+
             Your streams have their own vibe. ✨
+
         </h3>
+
 
         <p>
 
@@ -1071,18 +1332,25 @@ footer strong{
 </section>
 
 
-<!-- SHAYARI -->
+<!-- ================= SHAYARI ================= -->
 
 <section>
 
     <div class="section-head">
 
         <small>
+
             A FEW WORDS
+
         </small>
 
+
         <h2>
-            Just For <span>You</span> 🌙
+
+            Just For
+            <span>You</span>
+            🌙
+
         </h2>
 
     </div>
@@ -1090,9 +1358,13 @@ footer strong{
 
     <div class="shayari">
 
+
         <div class="shayari-icon">
+
             💗
+
         </div>
+
 
         <p>
 
@@ -1118,18 +1390,26 @@ footer strong{
 </section>
 
 
-<!-- MESSAGE -->
+<!-- ================= MESSAGE ================= -->
 
 <section class="message-area">
+
 
     <div class="section-head">
 
         <small>
+
             ONE LAST THING
+
         </small>
 
+
         <h2>
-            A Little <span>Message</span> 💌
+
+            A Little
+            <span>Message</span>
+            💌
+
         </h2>
 
     </div>
@@ -1148,9 +1428,13 @@ footer strong{
         class="hidden-message"
         id="hiddenMessage">
 
+
         <h3>
+
             Dear Shanaya ❤️
+
         </h3>
+
 
         <p>
 
@@ -1184,17 +1468,24 @@ footer strong{
 </section>
 
 
-<!-- FINAL -->
+<!-- ================= FINAL ================= -->
 
 <section class="final">
 
+
     <div class="final-heart">
+
         ❤️
+
     </div>
 
+
     <h2>
+
         Keep Shining, Shanaya ✨
+
     </h2>
+
 
     <p>
 
@@ -1207,7 +1498,7 @@ footer strong{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1216,7 +1507,9 @@ footer strong{
     <br>
 
     <strong>
+
         Ayush Shrivastava
+
     </strong>
 
     <br>
@@ -1228,7 +1521,7 @@ footer strong{
 
 <script>
 
-/* LOADER */
+/* ================= LOADER ================= */
 
 window.addEventListener(
     "load",
@@ -1242,12 +1535,13 @@ window.addEventListener(
                     "loader"
                 );
 
-                loader.style.opacity="0";
+                loader.style.opacity =
+                "0";
 
                 setTimeout(
                     function(){
 
-                        loader.style.display=
+                        loader.style.display =
                         "none";
 
                     },
@@ -1262,7 +1556,7 @@ window.addEventListener(
 );
 
 
-/* MUSIC */
+/* ================= MUSIC ================= */
 
 const music =
 document.getElementById("bgMusic");
@@ -1290,7 +1584,9 @@ function toggleMusic(){
 
         });
 
-    }else{
+    }
+
+    else{
 
         music.pause();
 
@@ -1302,51 +1598,79 @@ function toggleMusic(){
 }
 
 
-/* FLOATING HEARTS */
+/* ================= FLOATING HEARTS ================= */
 
 function createHeart(){
 
     const heart =
     document.createElement("div");
 
-    heart.className="heart";
+    heart.className =
+    "heart";
 
-    const icons=[
+
+    const icons = [
+
         "❤️",
         "💗",
         "💖",
         "💕",
         "✨"
+
     ];
+
 
     heart.innerHTML =
     icons[
         Math.floor(
-            Math.random()*icons.length
+            Math.random()
+            * icons.length
         )
     ];
 
+
     heart.style.left =
-    Math.random()*100+"vw";
+    Math.random()
+    * 100
+    + "vw";
+
 
     heart.style.fontSize =
-    (12+Math.random()*18)+"px";
+    (
+        12
+        +
+        Math.random()
+        * 18
+    )
+    + "px";
+
 
     heart.style.animationDuration =
-    (5+Math.random()*7)+"s";
+    (
+        5
+        +
+        Math.random()
+        * 7
+    )
+    + "s";
+
 
     document.body.appendChild(
         heart
     );
 
+
     setTimeout(
         function(){
+
             heart.remove();
+
         },
         13000
     );
 
 }
+
 
 setInterval(
     createHeart,
@@ -1354,20 +1678,28 @@ setInterval(
 );
 
 
-/* SCROLL */
+/* ================= SCROLL ================= */
 
 function scrollToSection(id){
 
-    document
-    .getElementById(id)
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+    const section =
+    document.getElementById(id);
+
+
+    if(section){
+
+        section.scrollIntoView({
+
+            behavior:"smooth"
+
+        });
+
+    }
 
 }
 
 
-/* MESSAGE */
+/* ================= MESSAGE ================= */
 
 function showMessage(){
 
@@ -1376,14 +1708,20 @@ function showMessage(){
         "hiddenMessage"
     );
 
-    message.style.display="block";
+
+    message.style.display =
+    "block";
+
 
     setTimeout(
         function(){
 
             message.scrollIntoView({
+
                 behavior:"smooth",
+
                 block:"center"
+
             });
 
         },
@@ -1393,21 +1731,27 @@ function showMessage(){
 }
 
 
-/* BUTTON HEART EFFECT */
+/* ================= BUTTON HEART EFFECT ================= */
 
 document.addEventListener(
     "click",
     function(e){
 
         if(
-            e.target.tagName==="BUTTON"
+
+            e.target.tagName ===
+            "BUTTON"
+
             &&
-            e.target.id!=="musicBtn"
+
+            e.target.id !==
+            "musicBtn"
+
         ){
 
             for(
-                let i=0;
-                i<5;
+                let i = 0;
+                i < 5;
                 i++
             ){
 
