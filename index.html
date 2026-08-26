@@ -4,14 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Shanaya ❤️ | Neon Fan Page</title>
+<title>For Shanaya ❤️</title>
 
 <style>
-
-/* =========================
-   RESET
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -23,185 +18,86 @@ html{
 }
 
 body{
-    background:#020207;
+    background:#050207;
     color:#fff;
     font-family:Arial,Helvetica,sans-serif;
     overflow-x:hidden;
 }
 
-
-/* =========================
-   NEON BACKGROUND
-========================= */
+/* ===== BACKGROUND ===== */
 
 body::before{
     content:"";
     position:fixed;
     inset:0;
-    z-index:-10;
+    z-index:-5;
 
     background:
-    radial-gradient(
-        circle at 10% 20%,
-        rgba(255,0,110,.22),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 90% 25%,
-        rgba(0,180,255,.18),
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 50% 90%,
-        rgba(150,0,255,.20),
-        transparent 35%
-    ),
-    #020207;
+    radial-gradient(circle at 15% 20%,rgba(255,30,110,.22),transparent 28%),
+    radial-gradient(circle at 85% 30%,rgba(145,50,255,.20),transparent 30%),
+    radial-gradient(circle at 50% 90%,rgba(255,50,150,.13),transparent 30%),
+    #050207;
 }
-
-
-/* =========================
-   MOVING NEON GLOWS
-========================= */
 
 .glow{
     position:fixed;
-
     width:300px;
     height:300px;
-
     border-radius:50%;
-
     filter:blur(100px);
-
-    opacity:.30;
-
-    z-index:-5;
-
-    animation:
-    glowMove 10s infinite alternate ease-in-out;
+    opacity:.25;
+    z-index:-4;
+    animation:moveGlow 12s infinite alternate ease-in-out;
 }
 
 .glow.one{
-    background:#ff0080;
-    left:-120px;
+    background:#ff176f;
     top:10%;
+    left:-100px;
 }
 
 .glow.two{
-    background:#00eaff;
-    right:-120px;
-    top:40%;
-
-    animation-delay:2s;
+    background:#7a35ff;
+    right:-100px;
+    bottom:10%;
 }
 
-.glow.three{
-    background:#9d00ff;
-    left:30%;
-    bottom:-150px;
-
-    animation-delay:4s;
+@keyframes moveGlow{
+    from{transform:translate(0,0);}
+    to{transform:translate(120px,80px);}
 }
 
-@keyframes glowMove{
-
-    0%{
-        transform:translate(0,0) scale(1);
-    }
-
-    50%{
-        transform:translate(100px,70px) scale(1.15);
-    }
-
-    100%{
-        transform:translate(-50px,-60px) scale(.9);
-    }
-}
-
-
-/* =========================
-   NEON GRID
-========================= */
-
-body::after{
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    z-index:-8;
-
-    background-image:
-    linear-gradient(
-        rgba(0,255,255,.035) 1px,
-        transparent 1px
-    ),
-    linear-gradient(
-        90deg,
-        rgba(255,0,150,.035) 1px,
-        transparent 1px
-    );
-
-    background-size:
-    45px 45px;
-
-    pointer-events:none;
-}
-
-
-/* =========================
-   LOADER
-========================= */
+/* ===== LOADER ===== */
 
 .loader{
-
     position:fixed;
     inset:0;
+    z-index:9999;
 
-    z-index:99999;
-
-    background:#020207;
+    background:#050207;
 
     display:flex;
-
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
     flex-direction:column;
 
     transition:1s ease;
 }
 
-.loader-icon{
-
+.loader-heart{
     font-size:70px;
-
-    animation:
-    heartPulse 1s infinite;
-
-    filter:
-    drop-shadow(0 0 10px #ff0080)
-    drop-shadow(0 0 30px #ff0080);
+    animation:pulse 1.2s infinite;
 }
 
-.loader-text{
-
+.loader p{
     margin-top:20px;
-
-    color:#ff4da6;
-
-    letter-spacing:5px;
-
-    font-size:10px;
-
-    text-shadow:
-    0 0 5px #ff0080,
-    0 0 15px #ff0080;
+    letter-spacing:4px;
+    font-size:11px;
+    color:#ff9abc;
+    text-align:center;
 }
 
-@keyframes heartPulse{
-
+@keyframes pulse{
     0%,100%{
         transform:scale(1);
     }
@@ -211,1142 +107,460 @@ body::after{
     }
 }
 
+/* ===== MUSIC BUTTON ===== */
 
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-.heart{
-
+.music-btn{
     position:fixed;
+    right:18px;
+    bottom:18px;
+    z-index:9998;
 
-    bottom:-50px;
+    padding:12px 18px;
 
-    pointer-events:none;
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:50px;
 
-    z-index:-1;
+    background:rgba(15,8,18,.85);
+    color:white;
 
-    animation:
-    floatHeart linear forwards;
+    backdrop-filter:blur(15px);
 
-    filter:
-    drop-shadow(0 0 8px #ff0080);
+    cursor:pointer;
+
+    box-shadow:
+    0 0 25px rgba(255,50,130,.25);
+
+    transition:.3s;
 }
 
-@keyframes floatHeart{
+.music-btn:hover{
+    transform:scale(1.06);
+}
+
+/* ===== FLOATING HEARTS ===== */
+
+.heart{
+    position:fixed;
+    bottom:-40px;
+    pointer-events:none;
+    z-index:-1;
+
+    animation:heartFloat linear forwards;
+}
+
+@keyframes heartFloat{
 
     0%{
-        transform:
-        translateY(0)
-        rotate(0);
-
+        transform:translateY(0) rotate(0deg);
         opacity:0;
     }
 
     15%{
-        opacity:.9;
+        opacity:.8;
     }
 
     100%{
-        transform:
-        translateY(-115vh)
-        rotate(360deg);
-
+        transform:translateY(-115vh) rotate(360deg);
         opacity:0;
     }
 }
 
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar{
-
-    position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
-
-    z-index:5000;
-
-    padding:16px 22px;
-
-    background:
-    rgba(2,2,7,.72);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:
-    1px solid rgba(255,0,150,.35);
-
-    box-shadow:
-    0 0 15px rgba(255,0,120,.15),
-    0 0 40px rgba(0,200,255,.08);
-
-    display:flex;
-
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-
-    font-size:20px;
-
-    font-weight:900;
-
-    color:white;
-
-    text-shadow:
-    0 0 5px white,
-    0 0 15px #ff0080,
-    0 0 30px #ff0080;
-}
-
-.logo span{
-
-    color:#ff0080;
-
-    text-shadow:
-    0 0 5px #ff0080,
-    0 0 20px #ff0080;
-}
-
-.nav-btn{
-
-    padding:9px 17px;
-
-    border-radius:30px;
-
-    border:
-    1px solid #00eaff;
-
-    background:
-    rgba(0,234,255,.06);
-
-    color:#fff;
-
-    cursor:pointer;
-
-    box-shadow:
-    inset 0 0 10px rgba(0,234,255,.12),
-    0 0 10px rgba(0,234,255,.4);
-
-    transition:.3s;
-}
-
-.nav-btn:hover{
-
-    box-shadow:
-    0 0 10px #00eaff,
-    0 0 25px #00eaff;
-
-    transform:scale(1.05);
-}
-
-
-/* =========================
-   HERO
-========================= */
+/* ===== HERO ===== */
 
 .hero{
-
     min-height:100vh;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
     text-align:center;
 
-    padding:110px 20px 60px;
-
+    padding:25px;
     position:relative;
 }
 
 .hero-content{
-
     max-width:850px;
-
-    animation:
-    heroIn 1.7s ease;
+    animation:heroAppear 2s ease;
 }
 
-@keyframes heroIn{
+@keyframes heroAppear{
 
     from{
         opacity:0;
-        transform:
-        translateY(60px)
-        scale(.95);
+        transform:translateY(60px);
     }
 
     to{
         opacity:1;
-        transform:
-        translateY(0)
-        scale(1);
+        transform:translateY(0);
     }
 }
 
-
-/* =========================
-   NEON BADGE
-========================= */
-
-.badge{
-
-    display:inline-block;
-
-    padding:9px 17px;
-
-    border-radius:30px;
-
-    border:
-    1px solid #ff0080;
-
-    color:#ff6bb5;
-
-    background:
-    rgba(255,0,128,.06);
-
-    box-shadow:
-    0 0 8px rgba(255,0,128,.6),
-    inset 0 0 10px rgba(255,0,128,.08);
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
+.mini{
+    color:#ff86aa;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    font-size:12px;
     margin-bottom:25px;
-
-    animation:
-    neonFlicker 3s infinite;
 }
-
-
-/* =========================
-   NEON TITLE
-========================= */
 
 .hero h1{
-
-    font-size:
-    clamp(65px,16vw,150px);
-
+    font-size:clamp(65px,15vw,150px);
     line-height:.9;
-
     font-weight:900;
 
-    color:#fff;
+    background:
+    linear-gradient(
+        90deg,
+        #fff,
+        #ff6f9f,
+        #d477ff,
+        #fff
+    );
 
-    text-shadow:
+    background-size:300%;
 
-    0 0 5px #fff,
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-    0 0 10px #ff0080,
-
-    0 0 20px #ff0080,
-
-    0 0 40px #ff0080,
-
-    0 0 80px #ff0080;
-
-    animation:
-    titleGlow 3s infinite alternate;
+    animation:textGradient 5s infinite;
 }
 
-@keyframes titleGlow{
+@keyframes textGradient{
 
     0%{
-        text-shadow:
-        0 0 5px #fff,
-        0 0 15px #ff0080,
-        0 0 30px #ff0080;
+        background-position:0%;
+    }
+
+    50%{
+        background-position:100%;
     }
 
     100%{
-        text-shadow:
-        0 0 5px #fff,
-        0 0 15px #00eaff,
-        0 0 30px #00eaff,
-        0 0 60px #00eaff;
+        background-position:0%;
     }
 }
 
 .hero h2{
-
     margin-top:25px;
-
-    font-size:
-    clamp(22px,5vw,35px);
 
     font-weight:400;
 
-    color:#fff;
+    font-size:
+    clamp(20px,4vw,30px);
 
-    text-shadow:
-    0 0 8px #ff0080,
-    0 0 20px #ff0080;
+    color:#eee;
 }
 
 .hero p{
+    max-width:600px;
 
-    max-width:620px;
-
-    margin:20px auto;
+    margin:20px auto 0;
 
     color:#aaa;
 
     line-height:1.8;
+
+    font-size:16px;
 }
 
+.open-btn{
+    display:inline-block;
 
-/* =========================
-   BUTTONS
-========================= */
+    margin-top:35px;
 
-.hero-buttons{
+    padding:16px 34px;
 
-    display:flex;
+    color:white;
 
-    justify-content:center;
+    text-decoration:none;
 
-    gap:15px;
+    border-radius:50px;
 
-    flex-wrap:wrap;
+    background:
+    linear-gradient(
+        90deg,
+        #ff357b,
+        #a63dff
+    );
 
-    margin-top:30px;
-}
-
-.primary-btn,
-.secondary-btn{
-
-    padding:14px 25px;
-
-    border-radius:40px;
-
-    color:#fff;
-
-    cursor:pointer;
-
-    font-weight:700;
+    box-shadow:
+    0 0 25px rgba(255,50,130,.3);
 
     transition:.3s;
 }
 
-.primary-btn{
-
-    border:
-    1px solid #ff0080;
-
-    background:
-    rgba(255,0,128,.08);
+.open-btn:hover{
+    transform:scale(1.07);
 
     box-shadow:
-    0 0 10px #ff0080,
-    inset 0 0 10px rgba(255,0,128,.1);
+    0 0 45px rgba(255,50,130,.6);
 }
 
-.secondary-btn{
+.scroll{
+    position:absolute;
 
-    border:
-    1px solid #00eaff;
+    bottom:25px;
+    left:50%;
 
-    background:
-    rgba(0,234,255,.06);
+    transform:translateX(-50%);
 
-    box-shadow:
-    0 0 10px #00eaff,
-    inset 0 0 10px rgba(0,234,255,.1);
+    color:#777;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    animation:bounce 1.5s infinite;
 }
 
-.primary-btn:hover{
+@keyframes bounce{
 
-    transform:
-    translateY(-4px)
-    scale(1.04);
-
-    box-shadow:
-    0 0 10px #ff0080,
-    0 0 25px #ff0080,
-    0 0 50px rgba(255,0,128,.4);
+    50%{
+        transform:
+        translate(-50%,8px);
+    }
 }
 
-.secondary-btn:hover{
-
-    transform:
-    translateY(-4px)
-    scale(1.04);
-
-    box-shadow:
-    0 0 10px #00eaff,
-    0 0 25px #00eaff,
-    0 0 50px rgba(0,234,255,.4);
-}
-
-
-/* =========================
-   SECTION
-========================= */
+/* ===== SECTIONS ===== */
 
 section{
-
     max-width:1100px;
 
     margin:auto;
 
-    padding:
-    100px 20px;
+    padding:100px 20px;
 }
 
-.section-head{
-
+.title{
     text-align:center;
 
-    margin-bottom:45px;
+    margin-bottom:50px;
 }
 
-.section-head small{
-
-    color:#00eaff;
+.title small{
+    color:#ff6d9e;
 
     letter-spacing:4px;
 
-    font-size:10px;
+    text-transform:uppercase;
 
-    text-shadow:
-    0 0 8px #00eaff,
-    0 0 20px #00eaff;
+    font-size:11px;
 }
 
-.section-head h2{
-
-    margin-top:15px;
+.title h2{
+    margin-top:12px;
 
     font-size:
     clamp(35px,7vw,60px);
-
-    text-shadow:
-    0 0 10px rgba(255,255,255,.15);
 }
 
-.section-head span{
-
-    color:#ff3d9b;
-
-    text-shadow:
-    0 0 8px #ff0080,
-    0 0 20px #ff0080,
-    0 0 40px #ff0080;
+.title span{
+    color:#ff6499;
 }
 
+/* ===== VIDEO ===== */
 
-/* =========================
-   NEON BORDER CARD
-========================= */
-
-.neon-card{
-
-    position:relative;
-
+.video-card{
     max-width:850px;
 
     margin:auto;
 
-    padding:35px;
-
-    border-radius:30px;
-
-    background:
-    rgba(5,5,15,.75);
-
-    border:
-    1px solid transparent;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 0 15px rgba(255,0,128,.2),
-    inset 0 0 25px rgba(0,234,255,.04);
-}
-
-
-/* RUNNING BORDER */
-
-.neon-card::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:-2px;
-
-    border-radius:32px;
-
-    background:
-    conic-gradient(
-        from 0deg,
-        #ff0080,
-        #00eaff,
-        #8a2be2,
-        #ff0080
-    );
-
-    animation:
-    borderRotate 4s linear infinite;
-
-    z-index:-2;
-}
-
-.neon-card::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:2px;
+    padding:8px;
 
     border-radius:28px;
 
-    background:#05050d;
-
-    z-index:-1;
-}
-
-@keyframes borderRotate{
-
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-
-/* =========================
-   CREATOR
-========================= */
-
-.creator{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:30px;
-}
-
-.creator-icon{
-
-    min-width:95px;
-
-    height:95px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    font-size:42px;
-
-    border:
-    2px solid #ff0080;
-
     background:
-    rgba(255,0,128,.08);
+    linear-gradient(
+        135deg,
+        #ff357b,
+        #913dff
+    );
 
     box-shadow:
-    0 0 10px #ff0080,
-    0 0 30px #ff0080,
-    inset 0 0 20px rgba(255,0,128,.15);
-
-    animation:
-    iconGlow 2s infinite alternate;
+    0 0 60px
+    rgba(255,50,130,.18);
 }
 
-@keyframes iconGlow{
+.video-card video{
+    width:100%;
 
-    from{
-        box-shadow:
-        0 0 8px #ff0080,
-        0 0 20px #ff0080;
-    }
+    display:block;
 
-    to{
-        box-shadow:
-        0 0 8px #00eaff,
-        0 0 30px #00eaff;
-    }
+    border-radius:21px;
+
+    background:#000;
 }
 
-.creator h3{
-
-    font-size:28px;
-
-    margin-bottom:10px;
-
-    text-shadow:
-    0 0 10px #ff0080;
-}
-
-.creator p{
-
-    color:#aaa;
-
-    line-height:1.8;
-}
-
-
-/* =========================
-   LIVE CARD
-========================= */
-
-.live-card{
-
-    position:relative;
-
-    max-width:850px;
-
-    margin:auto;
-
-    padding:35px;
-
-    border-radius:30px;
-
-    background:
-    rgba(5,5,12,.8);
-
-    border:
-    1px solid #ff315f;
-
-    box-shadow:
-    0 0 10px #ff315f,
-    0 0 30px rgba(255,49,95,.25),
-    inset 0 0 25px rgba(255,49,95,.05);
-}
-
-.live-top{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-bottom:20px;
-}
-
-.live-dot{
-
-    width:12px;
-
-    height:12px;
-
-    border-radius:50%;
-
-    background:#ff174f;
-
-    box-shadow:
-    0 0 5px #ff174f,
-    0 0 15px #ff174f,
-    0 0 30px #ff174f;
-
-    animation:
-    livePulse 1s infinite;
-}
-
-@keyframes livePulse{
-
-    50%{
-        transform:scale(1.4);
-
-        opacity:.5;
-    }
-}
-
-.live-title{
-
-    color:#ff527c;
-
-    text-shadow:
-    0 0 10px #ff174f;
-
-    font-weight:bold;
-}
-
-.live-card h3{
-
-    font-size:
-    clamp(25px,5vw,40px);
-
-    margin-bottom:15px;
-
-    text-shadow:
-    0 0 10px rgba(255,255,255,.3);
-}
-
-.live-card p{
-
-    color:#aaa;
-
-    line-height:1.8;
-}
-
-
-/* =========================
-   SHAYARI
-========================= */
-
-.shayari{
-
-    max-width:750px;
-
-    margin:auto;
-
-    padding:50px 25px;
-
-    text-align:center;
-
-    position:relative;
-
-    border-radius:30px;
-
-    background:#05050d;
-
-    border:
-    1px solid #9d00ff;
-
-    box-shadow:
-    0 0 10px #9d00ff,
-    0 0 35px rgba(157,0,255,.25),
-    inset 0 0 25px rgba(157,0,255,.07);
-}
-
-.shayari-icon{
-
-    font-size:55px;
-
-    filter:
-    drop-shadow(0 0 10px #ff0080)
-    drop-shadow(0 0 25px #ff0080);
-
-    animation:
-    heartPulse 1.5s infinite;
-}
-
-.shayari p{
-
-    margin-top:25px;
-
-    font-family:Georgia,serif;
-
-    font-size:
-    clamp(21px,5vw,31px);
-
-    line-height:1.8;
-
-    color:#eee;
-
-    text-shadow:
-    0 0 8px rgba(255,255,255,.15);
-}
-
-
-/* =========================
-   IMAGE GALLERY
-========================= */
+/* ===== PHOTO GALLERY ===== */
 
 .gallery{
-
     display:grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(220px,1fr));
+    repeat(auto-fit,minmax(240px,1fr));
 
     gap:25px;
 }
 
 .photo{
-
-    height:330px;
-
-    position:relative;
+    height:380px;
 
     border-radius:25px;
 
     overflow:hidden;
 
-    border:
-    1px solid #00eaff;
+    position:relative;
 
-    background:#05050d;
-
-    box-shadow:
-    0 0 8px #00eaff,
-    0 0 25px rgba(0,234,255,.18);
-
-    transition:.4s;
-}
-
-.photo::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:100%;
-    height:3px;
-
-    top:0;
-    left:-100%;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        #00eaff,
-        transparent
-    );
+    background:#111;
 
     box-shadow:
-    0 0 10px #00eaff;
+    0 20px 50px
+    rgba(0,0,0,.5);
 
-    animation:
-    scanLine 3s linear infinite;
-
-    z-index:3;
-}
-
-@keyframes scanLine{
-
-    100%{
-        left:100%;
-    }
+    transition:.5s;
 }
 
 .photo:hover{
-
     transform:
-    translateY(-8px)
+    translateY(-10px)
     scale(1.02);
-
-    border-color:#ff0080;
-
-    box-shadow:
-    0 0 10px #ff0080,
-    0 0 35px #ff0080;
 }
 
 .photo img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
     display:block;
 
-    transition:.5s;
+    transition:.7s;
 }
 
 .photo:hover img{
-
     transform:scale(1.08);
 }
 
+.photo::after{
+    content:"";
 
-/* =========================
-   VIDEO
-========================= */
+    position:absolute;
 
-.video-box{
+    inset:0;
 
-    max-width:850px;
+    background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,.45),
+        transparent 50%
+    );
+
+    pointer-events:none;
+}
+
+/* ===== MESSAGE ===== */
+
+.message-box{
+    max-width:800px;
 
     margin:auto;
 
-    padding:7px;
+    padding:55px 35px;
 
     border-radius:30px;
-
-    position:relative;
 
     background:
-    conic-gradient(
-        #ff0080,
-        #00eaff,
-        #9d00ff,
-        #ff0080
-    );
-
-    animation:
-    borderRotate 5s linear infinite;
-}
-
-.video-inner{
-
-    padding:5px;
-
-    border-radius:25px;
-
-    background:#03030a;
-}
-
-.video-inner video{
-
-    display:block;
-
-    width:100%;
-
-    max-height:600px;
-
-    border-radius:20px;
-
-    background:#000;
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-.message-area{
-
-    text-align:center;
-}
-
-.hidden-message{
-
-    max-width:750px;
-
-    margin:30px auto 0;
-
-    padding:40px 25px;
-
-    border-radius:30px;
-
-    background:#05050d;
+    rgba(255,255,255,.035);
 
     border:
-    1px solid #ff0080;
+    1px solid
+    rgba(255,255,255,.1);
+
+    backdrop-filter:blur(18px);
+
+    text-align:center;
 
     box-shadow:
-    0 0 10px #ff0080,
-    0 0 35px rgba(255,0,128,.25),
-    inset 0 0 20px rgba(255,0,128,.06);
-
-    display:none;
-
-    animation:
-    reveal .8s ease;
+    0 20px 80px
+    rgba(0,0,0,.35);
 }
 
-@keyframes reveal{
+.message-heart{
+    font-size:60px;
 
-    from{
-        opacity:0;
-        transform:
-        translateY(30px)
-        scale(.95);
-    }
-
-    to{
-        opacity:1;
-        transform:
-        translateY(0)
-        scale(1);
-    }
+    animation:pulse 1.5s infinite;
 }
 
-.hidden-message h3{
+.message-box h2{
+    margin-top:20px;
 
-    font-size:30px;
-
-    color:#ff6ba8;
-
-    text-shadow:
-    0 0 10px #ff0080,
-    0 0 25px #ff0080;
-
-    margin-bottom:20px;
+    font-size:35px;
 }
 
-.hidden-message p{
+.message-box p{
+    margin-top:25px;
 
     color:#ccc;
 
-    line-height:1.9;
-}
-
-
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-.music-btn{
-
-    position:fixed;
-
-    right:18px;
-
-    bottom:18px;
-
-    z-index:9000;
-
-    padding:13px 18px;
-
-    border-radius:40px;
-
-    border:
-    1px solid #00eaff;
-
-    background:
-    rgba(2,2,10,.85);
-
-    color:#fff;
-
-    cursor:pointer;
-
-    box-shadow:
-    0 0 8px #00eaff,
-    0 0 20px rgba(0,234,255,.35);
-
-    backdrop-filter:blur(12px);
-
-    transition:.3s;
-}
-
-.music-btn:hover{
-
-    box-shadow:
-    0 0 10px #00eaff,
-    0 0 30px #00eaff;
-
-    transform:scale(1.05);
-}
-
-
-/* =========================
-   FINAL
-========================= */
-
-.final{
-
-    text-align:center;
-
-    padding:
-    120px 20px;
-}
-
-.final-heart{
-
-    font-size:70px;
-
-    filter:
-    drop-shadow(0 0 8px #ff0080)
-    drop-shadow(0 0 25px #ff0080);
-
-    animation:
-    heartPulse 1.5s infinite;
-}
-
-.final h2{
-
-    margin-top:25px;
-
-    font-size:
-    clamp(35px,7vw,60px);
-
-    color:#fff;
-
-    text-shadow:
-    0 0 8px #ff0080,
-    0 0 20px #ff0080,
-    0 0 40px #ff0080;
-}
-
-.final p{
-
-    margin:20px auto;
-
-    max-width:600px;
-
-    color:#999;
-
-    line-height:1.8;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-
-    text-align:center;
-
-    padding:50px 20px;
-
-    border-top:
-    1px solid rgba(0,234,255,.3);
-
-    color:#666;
-
-    font-size:12px;
-
     line-height:2;
 
-    box-shadow:
-    0 -5px 25px rgba(0,234,255,.08);
+    font-size:17px;
+}
+
+/* ===== QUOTE ===== */
+
+.quote{
+    text-align:center;
+
+    max-width:700px;
+
+    margin:auto;
+}
+
+.quote p{
+    font-size:
+    clamp(25px,5vw,40px);
+
+    line-height:1.4;
+
+    font-weight:600;
+}
+
+.quote span{
+    color:#ff6499;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    padding:60px 20px;
+
+    text-align:center;
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.06);
+
+    color:#777;
+
+    font-size:13px;
+
+    line-height:2;
 }
 
 footer strong{
-
-    color:#ff5ca5;
-
-    text-shadow:
-    0 0 8px #ff0080,
-    0 0 20px #ff0080;
+    color:#ff6d9e;
 }
 
+/* ===== MOBILE ===== */
 
-/* =========================
-   FLICKER
-========================= */
-
-@keyframes neonFlicker{
-
-    0%,18%,22%,63%,64%,100%{
-        opacity:1;
-    }
-
-    20%,62%{
-        opacity:.55;
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:650px){
-
-    .navbar{
-        padding:14px;
-    }
-
-    .logo{
-        font-size:17px;
-    }
+@media(max-width:600px){
 
     .hero{
-        padding-top:120px;
+        padding:20px;
     }
 
     .hero h1{
@@ -1354,44 +568,603 @@ footer strong{
     }
 
     section{
-        padding:
-        75px 15px;
-    }
-
-    .creator{
-        flex-direction:column;
-
-        text-align:center;
-
-        padding:30px 20px;
-    }
-
-    .live-card{
-        padding:25px 20px;
+        padding:75px 15px;
     }
 
     .photo{
-        height:300px;
+        height:340px;
     }
 
-    .video-box{
-        padding:5px;
+    .message-box{
+        padding:40px 20px;
     }
 
-    .music-btn{
-        right:12px;
-        bottom:12px;
+    .message-box p{
+        font-size:15px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-
-<!-- NEON GLOWS -->
-
 <div class="glow one"></div>
-<div class="glow two"></div
+<div class="glow two"></div>
+
+
+<!-- MUSIC -->
+
+<button
+class="music-btn"
+id="musicBtn"
+onclick="toggleMusic()">
+
+🎵 Music OFF
+
+</button>
+
+
+<!-- LOADER -->
+
+<div
+class="loader"
+id="loader">
+
+<div class="loader-heart">
+❤️
+</div>
+
+<p>
+SOMETHING SPECIAL FOR SHANAYA
+</p>
+
+</div>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="mini">
+A little surprise
+</div>
+
+<h1>
+Shanaya
+</h1>
+
+<h2>
+Only For You 🥺❤️
+</h2>
+
+<p>
+This little corner of the internet
+was created especially for someone
+who is a little more special than usual.
+</p>
+
+<a
+href="#moments"
+class="open-btn">
+
+Open My Little Surprise ❤️
+
+</a>
+
+</div>
+
+<div class="scroll">
+SCROLL ↓
+</div>
+
+</header>
+
+
+<!-- VIDEO -->
+
+<section id="moments">
+
+<div class="title">
+
+<small>
+A little moment
+</small>
+
+<h2>
+Just <span>For You</span> 🎥
+</h2>
+
+</div>
+
+
+<div class="video-card">
+
+<!--
+Video add karne ke liye:
+
+static/videos/video.mp4
+
+naam rakho
+-->
+
+<video
+controls
+playsinline
+preload="metadata">
+
+<source
+src="/static/videos/video.mp4"
+type="video/mp4">
+
+Your browser does not support video.
+
+</video>
+
+</div>
+
+</section>
+
+
+<!-- PHOTOS -->
+
+<section>
+
+<div class="title">
+
+<small>
+Beautiful moments
+</small>
+
+<h2>
+A Few <span>Moments</span> 📸
+</h2>
+
+</div>
+
+
+<div class="gallery">
+
+
+<!-- PHOTO 1 -->
+
+<div class="photo">
+
+<img
+src="/static/photos/shanaya1.jpg"
+alt="Shanaya">
+
+</div>
+
+
+<!-- PHOTO 2 -->
+
+<div class="photo">
+
+<img
+src="/static/photos/shanaya2.jpg"
+alt="Shanaya">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section>
+
+<div class="quote">
+
+<p>
+
+“Some people don't need a reason
+to make you
+<span>smile.</span>”
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section>
+
+<div class="title">
+
+<small>
+One little thing
+</small>
+
+<h2>
+A Message
+<span>For Shanaya</span>
+💌
+</h2>
+
+</div>
+
+
+<div class="message-box">
+
+<div class="message-heart">
+❤️
+</div>
+
+<h2>
+Dear Shanaya
+</h2>
+
+<p>
+
+Pata nahi tumhe ye chhoti si
+website dekhkar kaisa lagega...
+
+<br><br>
+
+Lekin kuch feelings aisi hoti hain
+jinhe simple words mein explain
+karna thoda mushkil hota hai.
+
+<br><br>
+
+Tumhari smile, tumhari presence
+aur tumhari little things
+mujhe genuinely achhi lagti hain.
+
+<br><br>
+
+Isliye socha words ke saath
+kuch different karke dekha jaye. ❤️
+
+<br><br>
+
+No pressure.
+No expectations.
+
+<br><br>
+
+Bas ek simple si feeling...
+jo honestly tumhare liye hai.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section>
+
+<div class="quote">
+
+<p>
+
+Made specially for
+<span>Shanaya ❤️</span>
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+Made with ❤️ by
+
+<br>
+
+<strong>
+Ayush Shrivastava
+</strong>
+
+<br>
+
+Web Developer
+
+</footer>
+
+
+<script>
+
+/* ===== LOADER ===== */
+
+window.addEventListener(
+"load",
+function(){
+
+setTimeout(
+function(){
+
+const loader=
+document.getElementById(
+"loader"
+);
+
+loader.style.opacity="0";
+
+setTimeout(
+function(){
+
+loader.style.display="none";
+
+},
+1000
+);
+
+},
+1800
+);
+
+});
+
+
+/* ===== FLOATING HEARTS ===== */
+
+function createHeart(){
+
+const heart=
+document.createElement("div");
+
+heart.className="heart";
+
+const symbols=[
+"❤️",
+"💗",
+"💖",
+"💕",
+"✨"
+];
+
+heart.innerHTML=
+symbols[
+Math.floor(
+Math.random()*
+symbols.length
+)
+];
+
+heart.style.left=
+Math.random()*100+"vw";
+
+heart.style.fontSize=
+(12+
+Math.random()*20)+"px";
+
+heart.style.animationDuration=
+(5+
+Math.random()*7)+"s";
+
+document.body.appendChild(
+heart
+);
+
+setTimeout(
+function(){
+heart.remove();
+},
+13000
+);
+
+}
+
+setInterval(
+createHeart,
+650
+);
+
+
+/* ===== SMOOTH BUTTON ===== */
+
+document
+.querySelector(".open-btn")
+.addEventListener(
+"click",
+function(e){
+
+e.preventDefault();
+
+document
+.querySelector("#moments")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+
+/* ===== IMAGE FALLBACK ===== */
+
+document
+.querySelectorAll(".photo img")
+.forEach(
+function(img){
+
+img.addEventListener(
+"error",
+function(){
+
+this.style.display="none";
+
+this.parentElement.style.background=
+"linear-gradient(135deg,#351021,#241035)";
+
+}
+);
+
+});
+
+
+/* ===== BUILT-IN MUSIC ===== */
+
+let audioContext=null;
+let masterGain=null;
+let musicPlaying=false;
+let musicTimer=null;
+
+const musicBtn=
+document.getElementById(
+"musicBtn"
+);
+
+
+function startMusic(){
+
+if(musicPlaying)
+return;
+
+audioContext=
+new(
+window.AudioContext ||
+window.webkitAudioContext
+)();
+
+masterGain=
+audioContext.createGain();
+
+masterGain.gain.value=.055;
+
+masterGain.connect(
+audioContext.destination
+);
+
+musicPlaying=true;
+
+musicBtn.innerHTML=
+"🎵 Music ON";
+
+playSoftNote();
+
+}
+
+
+function playSoftNote(){
+
+if(!musicPlaying)
+return;
+
+const now=
+audioContext.currentTime;
+
+const notes=[
+261.63,
+329.63,
+392.00,
+329.63,
+293.66,
+349.23,
+440.00,
+349.23
+];
+
+const frequency=
+notes[
+Math.floor(
+Math.random()*
+notes.length
+)
+];
+
+const oscillator=
+audioContext.createOscillator();
+
+const gain=
+audioContext.createGain();
+
+oscillator.type="sine";
+
+oscillator.frequency.value=
+frequency;
+
+gain.gain.setValueAtTime(
+0,
+now
+);
+
+gain.gain.linearRampToValueAtTime(
+.7,
+now+.8
+);
+
+gain.gain.exponentialRampToValueAtTime(
+.001,
+now+3.5
+);
+
+oscillator.connect(gain);
+
+gain.connect(masterGain);
+
+oscillator.start(now);
+
+oscillator.stop(
+now+3.6
+);
+
+musicTimer=
+setTimeout(
+playSoftNote,
+1800
+);
+
+}
+
+
+function stopMusic(){
+
+musicPlaying=false;
+
+if(musicTimer){
+
+clearTimeout(
+musicTimer
+);
+
+}
+
+if(masterGain){
+
+masterGain.gain.exponentialRampToValueAtTime(
+.001,
+audioContext.currentTime+.5
+);
+
+}
+
+musicBtn.innerHTML=
+"🎵 Music OFF";
+
+}
+
+
+function toggleMusic(){
+
+if(!musicPlaying){
+
+startMusic();
+
+}else{
+
+stopMusic();
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
